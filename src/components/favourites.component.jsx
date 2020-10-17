@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { BsFillStarFill } from "react-icons/bs";
-import Icon from "./icons.componet";
+import Icon from "./Icons.Componet";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import Delay from 'react-delay'
-import {FavouritesContext} from './FavouritesContext'
-
+import {FavouritesContext} from '../Context/FavouritesContext'
+import PerfectScrollbar from "react-perfect-scrollbar";
 const Favourite = React.memo((props) => {
   const [fave, setFave] = useContext(FavouritesContext)
 
@@ -20,6 +20,7 @@ const Favourite = React.memo((props) => {
   
   const list =   
     fave.map((e) => {
+      // console.log('e',e)
      return(
         <div key={e.id}>
           <Delay wait={100} >
@@ -42,25 +43,47 @@ const Favourite = React.memo((props) => {
             }
             position="left center"
           >
-            <div id={e.iconId} key={e.name}>
+            <div>{e.name}</div>
+            {typeof e.description != "undefined" ? (
+              <div id={e.iconId} key={e.name}>
               <div
                 key={e.iconId}
                 value={e.iconId}
                 style={{ backgroundImage: `url(${props.flag})` }}
               >
-                
-                {e.name}
+
+                <div>
+                <p>Main : {e.main}</p>
+                </div>
+                <div>
+                <p>Description :{e.description}</p>
+                </div>
+                <div>
+                  <p>Coordinates</p>
+                  <div>Latitude: {e.lat}</div>
+                  <div>Longitude: {e.lon}</div>
+                </div>
               </div>
             </div>
+            ): (
+              ""
+            )}
+            
           </Popup>
           </Delay>
         </div>
      )
     })
-    console.log('list',list)
   return (
     <div>
-     {list}
+      <div className="favourite">
+            <div > Favourites! </div>
+              <div className="scroll">
+                <PerfectScrollbar style={{ width: 200, height: 600 }}>
+                  {list}
+                </PerfectScrollbar>
+              </div>
+          </div>
     </div>
   );
 })

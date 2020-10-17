@@ -1,10 +1,10 @@
 import React, {useState, useContext} from 'react'
-import {FavouritesContext} from './FavouritesContext'
+import {FavouritesContext} from '../Context/FavouritesContext'
 import { BsFillStarFill } from "react-icons/bs"
 import { AiFillCopy } from "react-icons/ai";
 
 const AddandCopy = (props) => {
-
+   
     const [fave,setFave] = useContext(FavouritesContext)   
     const weather = props.props
     const items = {...localStorage}

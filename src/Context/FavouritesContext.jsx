@@ -1,5 +1,5 @@
 import React , {useState, useEffect, createContext} from 'react'
-import Favourite from './favourites.component'
+
 
 export const FavouritesContext = createContext()
 
@@ -14,11 +14,16 @@ export const FavouritesProvider = (props) => {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${e}&appid=cbf3e6bbd09a990359dddac086ea6fb0`)
           .then((res) => res.json())
           .then((result) => {
+            console.log(result)
             setFave(fave =>[ ...fave, {
               id:result.coord.lat,
               name:result.name,
               temp:result.main.temp,
-              icon:result.weather[0].id
+              icon:result.weather[0].id,
+              main:result.weather[0].main,
+              description:result.weather[0].description,
+              lon:result.coord.lon,
+              lat:result.coord.lat
             }])  
     })
   }catch{

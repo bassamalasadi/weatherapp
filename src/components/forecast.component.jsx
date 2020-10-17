@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "./icons.componet";
+import Icon from "./Icons.Componet";
 const Forecast = React.memo((props) => {
   // console.log(props.data.list[0].weather[0].id);
 
