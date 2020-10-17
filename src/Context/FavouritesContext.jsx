@@ -14,7 +14,6 @@ export const FavouritesProvider = (props) => {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${e}&appid=cbf3e6bbd09a990359dddac086ea6fb0`)
           .then((res) => res.json())
           .then((result) => {
-            console.log(result)
             setFave(fave =>[ ...fave, {
               id:result.coord.lat,
               name:result.name,
