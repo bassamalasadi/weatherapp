@@ -1,4 +1,5 @@
 body {
+  left: 50%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -13,7 +14,7 @@ code {
     monospace;
 }
 .App {
-  background-image: url("./assets/7.jpg");
+  background-image: url("./assets/2.jpg");
   background-size: cover;
 }
 main {
@@ -21,8 +22,8 @@ main {
   min-width: 100vh;
   background-image: linear-gradient(
     to bottom,
-    rgba(10, 0, 97, 0.6),
-    rgba(123, 169, 253, 0.3)
+    rgba(0, 0, 0, 0.658),
+    rgba(131, 125, 125, 0.2)
   );
 }
 
@@ -132,6 +133,13 @@ button {
   font-weight: 600;
   text-shadow: 1px 2px rgba(50, 50, 70, 0.8);
 }
+.weather-extra-countryName {
+  color: #fdfdfd;
+  font-family: Segoe UI;
+  font-size: 25px;
+  font-weight: 600;
+  text-shadow: 1px 2px rgba(50, 50, 70, 0.8);
+}
 .forecast-box {
   position: relative;
   display: inline-block;
@@ -158,20 +166,25 @@ button {
   display: inline-block;
   right: 0;
   width: auto;
-  height: 35px;
+  height: 43px;
   width: 15%;
   margin: 20px;
   margin-top: 30px;
   margin-left: -10px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 16px;
+  border-radius: 0 16px;
   padding: 5px 15px;
   color: #fdfdfd;
-  font-size: 1vw;
+  font-size: 20px;
   font-weight: 500;
-  text-shadow: 2px 3px rgba(50, 50, 70, 0.5);
+  font-family: Franklin Gothic Medium;
+  text-shadow: 1px 1px rgba(50, 50, 70, 0.5);
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+.favourite:hover {
+  border-radius: 16px 0;
+  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease;
 }
 .scrollbar {
   background-color: rgba(73, 101, 151, 0.7);
@@ -267,6 +280,8 @@ button {
   outline: none;
   background-color: rgba(252, 252, 252, 0.2);
   border-bottom: white solid 2px;
+  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease;
 }
 
 .search-list {
@@ -282,6 +297,8 @@ button {
   -webkit-user-select: none;
   background-color: white;
   border-radius: 0 0 24px 24px;
+  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease;
 }
 .search-items {
   display: flex;
@@ -295,10 +312,14 @@ button {
 
   padding-bottom: 4px;
   overflow: hidden;
+  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease;
 }
 .suggestion {
   flex: auto;
   padding-bottom: 16px;
+  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease;
 }
 .suggeste {
   display: flex;
@@ -306,6 +327,8 @@ button {
   min-width: 0;
   max-height: none;
   padding: 0;
+  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease;
 }
 .suggesteCh {
   flex: auto;
@@ -313,6 +336,8 @@ button {
   margin: 0 20px;
   align-items: center;
   margin: 0 20px 0 14px;
+  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease;
 }
 .searchIcon {
   background: url(/images/searchbox/desktop_searchbox_sprites302_hr.webp)
@@ -322,6 +347,8 @@ button {
   min-width: 20px;
   height: 20px;
   width: 20px;
+  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease;
 }
 .searchRes {
   display: flex;
@@ -331,6 +358,8 @@ button {
   max-height: none;
   padding: 6px 0;
   cursor: pointer;
+  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease;
 }
 .searchItem {
   display: flex;
@@ -339,6 +368,8 @@ button {
   min-width: 0;
   max-height: none;
   padding: 6px 0;
+  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease;
 }
 span {
   flex: auto;
@@ -361,4 +392,53 @@ ul {
   width: 100%;
   height: 100%;
   background-color: rgba(163, 101, 101, 0.2);
+}
+
+.Notifi {
+  position: absolute;
+  left: 35%;
+  top: 15%;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 30%;
+  height: auto;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  transition: all 0.9s ease;
+  -webkit-transition: all 0.9s ease;
+}
+.NotifiHeader {
+  color: whitesmoke;
+  text-align: left;
+  background-color: #d9534f;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: monospace;
+}
+.Notifi:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.message {
+  margin: 5%;
+  position: relative;
+  font-family: system-ui;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+.cityName {
+  color: rgb(158, 3, 3);
+  font-size: 20px;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+.wiki {
+  color: rgb(0, 0, 156);
+  font-size: 20px;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+.popup {
+  width: 400px;
 }

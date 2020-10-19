@@ -22,9 +22,9 @@ const AddandCopy = (props) => {
                 icon:weather.weather[0].id
               }]) 
             localStorage.setItem(`${weather.name}`, JSON.stringify(weather.name));
-            console.log('not include', props.props.name)
+            
         }else{
-            console.log('include')
+            
         }
     }
 

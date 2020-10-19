@@ -1,11 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Weather from "./components/Weather.Component";
 import Forecast from "./components/Forecast.Component";
 import Favourite from "./components/Favourites.Component";
-import PlacesAutocomplete from "react-places-autocomplete";
 import AddandCopy from "./components/AddAndCopy.Component"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import {FavouritesProvider} from "./Context/FavouritesContext"
 import "react-perfect-scrollbar/dist/css/styles.css";
 import "./App.css";
@@ -20,7 +17,7 @@ function App() {
     const [forecast, setForecast] = value2
     const [flag, setFlag] = value3
     const [address, setAddress] = value4
-    console.log(weather)
+
     return(
       <div className="App">  
       <main>
@@ -41,6 +38,7 @@ function App() {
           </div>
                   <Favourite/>
         </div>
+        
         {typeof weather.main == "undefined" ? (
               <div className="logo">
 
@@ -50,7 +48,7 @@ function App() {
             )}
         {/* display the weather */}
         {typeof weather.main != "undefined" ? (
-              <Weather {...weather} {...flag} />
+              <Weather weather={weather} flag={flag} />
         ) : (
           ""
         )}
@@ -60,6 +58,7 @@ function App() {
         ) : (
           ""
         )}
+        
       </main>
     </div>
     )
