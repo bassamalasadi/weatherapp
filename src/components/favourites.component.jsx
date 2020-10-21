@@ -1,15 +1,23 @@
-import React, { useContext } from "react";
+import React, { useState,useContext } from "react";
 import { BsFillStarFill } from "react-icons/bs";
 import Icon from "./Icons.Componet";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import Delay from 'react-delay'
 import {FavouritesContext} from '../Context/FavouritesContext'
+import {SearchContext} from '../Context/SearchContext'
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { Card } from 'react-bootstrap';
+import Search from './Search.Component'
+
+
 const Favourite = React.memo((props) => {
+  const { value5 } = useContext(SearchContext)
+  const [view, setView] = value5
   const [fave, setFave] = useContext(FavouritesContext)
+  const [showModel, setShowModel] = useState(false)
   
+
   const del = (idx) => {
     const temp = [...fave]
     const name = temp[idx].name 
@@ -18,10 +26,14 @@ const Favourite = React.memo((props) => {
     localStorage.removeItem(`${name}`);
   };
   const handleChange = async () => {};
+
+  const handleView = (e) => {
+    setShowModel(true)
+    setView(e)
+  }
   
   const list =   
     fave.map((e) => {
-      // console.log('e',e)
      return(
         <div key={e.id}>
           <Delay wait={100} >
@@ -46,7 +58,9 @@ const Favourite = React.memo((props) => {
           >
             
 
-            <Card.Header><h4>{e.name}</h4></Card.Header>
+            <Card.Header><nobr><h4>{e.name}</h4> <div>
+            <button className="btn btn-success" onClick={()=> handleView(e.name)}> View</button>
+            </div></nobr></Card.Header>
             
             {typeof e.description != "undefined" ? (
               <Card.Body>
@@ -63,17 +77,18 @@ const Favourite = React.memo((props) => {
                 </div>
                 <Card.Text>
               
-                <h6>{e.main}</h6>
+                {e.main}
                 {e.description}
                 <br />
                 <br />
-                <h6>Coordinates</h6>
+                Coordinates
                 Latitude: {e.lat}<br />
                 Longitude: {e.lon}<br />
                 
                 </Card.Text>
               </div>
             </div>
+            
             </Card.Body>
             ): (
               ""
@@ -86,7 +101,8 @@ const Favourite = React.memo((props) => {
     })
   return (
     <div>
-      <div className="btn btn-warning favourite">
+      
+      <div className=" favourite">
             <div > Favourites! </div>
               <div className="scroll">
                 <PerfectScrollbar style={{ width: 200, height: 600 }}>

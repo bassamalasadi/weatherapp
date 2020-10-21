@@ -1,4 +1,4 @@
-import React, {useState,useContext} from 'react'
+import React, {useState, useEffect,useContext} from 'react'
 import {SearchContext} from '../Context/SearchContext'
 import PlacesAutocomplete from "react-places-autocomplete";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,20 +10,21 @@ const api = {
   forecast: "https://api.openweathermap.org/data/2.5/forecast",
 };
 
-const Search = () => {
+const Search = (props) => {
   
-  const {value, value2, value3, value4} = useContext(SearchContext)
+  const {value, value2, value3, value4, value5} = useContext(SearchContext)
   const [weather, setWeather] = value
   const [forecast, setForecast] = value2
   const [flag, setFlag] = value3
   const [address, setAddress] = value4
-
+  const [view, setView] = value5
   const [notification, setNotification] = useState('')
-
+  const [reset, setReset] = useState('')
+  let e = ''
   // take first word from cities
   const search = async (e) => {
-    
-    let dir = "";
+    if(e != ''){
+      let dir = "";
     try {
       // fetch weather api
       await fetch(`${api.weather}?q=${e}&appid=${api.keyWeather}`)
@@ -57,14 +58,23 @@ const Search = () => {
         setNotification(null)
     }, 5000)
     } }
+    }
+    
   const handleSelect = async (e) => {
     let regix = e.split(",")[0];
+    console.log('regix',regix)
     search(regix);
   };
-  let placeId = ""
+  useEffect(() => {
+    e = props.city
+    let regix = e.split(",")[0];
+    console.log('regix',regix)
+    search(regix);
+  }, [view])
+  // let placeId = ""
   
 return( 
-  <div>
+  <div className="search3">
     <PlacesAutocomplete
                 value={address}
                 onChange={setAddress}
