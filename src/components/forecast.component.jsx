@@ -24,7 +24,7 @@ const Forecast = React.memo((props) => {
           <div>
             <h4>{dayName}</h4>
             {/* <h6>{props.data.list[i].weather[0].description}</h6> */}
-            <div className="temp">
+            <div className="">
               {Math.round(props.data.list[i].main.temp - 273.15)}°C{" "}
             </div>
             <Icon icon={props.data.list[i].weather[0].id} />

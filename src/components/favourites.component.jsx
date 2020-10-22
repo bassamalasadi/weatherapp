@@ -8,8 +8,6 @@ import {FavouritesContext} from '../Context/FavouritesContext'
 import {SearchContext} from '../Context/SearchContext'
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { Card } from 'react-bootstrap';
-import Search from './Search.Component'
-
 
 const Favourite = React.memo((props) => {
   const { value5 } = useContext(SearchContext)
@@ -17,7 +15,6 @@ const Favourite = React.memo((props) => {
   const [fave, setFave] = useContext(FavouritesContext)
   const [showModel, setShowModel] = useState(false)
   
-
   const del = (idx) => {
     const temp = [...fave]
     const name = temp[idx].name 
@@ -37,11 +34,13 @@ const Favourite = React.memo((props) => {
      return(
         <div key={e.id}>
           <Delay wait={100} >
-          <Popup className="popup"
+          <Popup className=""
             onClick={handleChange}
             trigger={
               <div className="scrollbar">
                 <div>
+                
+                  {e.name} {Math.round(e.temp - 273.15)}°C <Icon icon={e.icon} />{" "}
                   <button
                     type="button"
                     className="btn btn-warning star"
@@ -49,8 +48,7 @@ const Favourite = React.memo((props) => {
                     onClick={() => del(fave.indexOf(e))}
                   >
                     <BsFillStarFill /> Remove
-                  </button>
-                  {e.name} {Math.round(e.temp - 273.15)}°C <Icon icon={e.icon} />{" "}
+                  </button>  
                 </div>
               </div>
             }

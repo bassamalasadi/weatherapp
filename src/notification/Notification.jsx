@@ -20,7 +20,7 @@ let url = 'https://en.wikipedia.org/wiki/List_of_towns_and_cities_with_100,000_o
                          {message.name} 
                     </nobr>{message.content2} 
                     <nobr className="wiki">
-                        <a href={url} target="_blank"> Wikipedia</a>
+                        <a href={url} target="_blank" rel="noopener noreferrer"> Wikipedia</a>
                     </nobr>
                     {message.content3}
                     

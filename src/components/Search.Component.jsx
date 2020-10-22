@@ -19,7 +19,6 @@ const Search = (props) => {
   const [address, setAddress] = value4
   const [view, setView] = value5
   const [notification, setNotification] = useState('')
-  const [reset, setReset] = useState('')
   let e = ''
   // take first word from cities
   const search = async (e) => {
@@ -68,13 +67,12 @@ const Search = (props) => {
   useEffect(() => {
     e = props.city
     let regix = e.split(",")[0];
-    console.log('regix',regix)
     search(regix);
   }, [view])
   // let placeId = ""
   
 return( 
-  <div className="search3">
+  <div className="">
     <PlacesAutocomplete
                 value={address}
                 onChange={setAddress}
@@ -91,21 +89,18 @@ return(
                 }) => (
                   <div className="HeadSearech">
                     <input
-                      {...getInputProps({ placeholder: "Search Places..." })}
+                      {...getInputProps({ placeholder: `Search Places...` })}
                       className="input-search"
                     />
-                    
-                      <FontAwesomeIcon icon={faSearch} color="white" />
+                    <FontAwesomeIcon icon={faSearch} color="white" />
                     <div className="search-list" >
                       {suggestions.map((suggestion) => {
-                        // placeId = suggestion.placeId
-                        // console.log(placeId)
                         return (
                           <div key ={suggestion.description} className="search-items">
                             <div 
                             {...getSuggestionItemProps(suggestion)}
                           >
-                            <ul className="suggestion">
+                            <ul className="">
                               <li  className="suggeste">
                                 <div  className="suggesteCh">
                                   <div className="searchIcon"></div>
