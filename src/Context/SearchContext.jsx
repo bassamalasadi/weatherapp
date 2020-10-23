@@ -10,6 +10,7 @@ export const SearchProvider = (props) => {
     const [flag, setFlag] = useState({});
     const [address, setAddress] = useState("");
     const [view, setView] = useState("")
+    const [date, setDate] = useState("")
 
     return(
         <SearchContext.Provider value={{
@@ -17,7 +18,9 @@ export const SearchProvider = (props) => {
             value2:[forecast,setForecast],
             value3:[flag, setFlag],
             value4:[address, setAddress],
-            value5:[view,setView]}}>
+            value5:[view,setView],
+            value6:[date,setDate]
+            }}>
             {props.children}
         </SearchContext.Provider>
     )

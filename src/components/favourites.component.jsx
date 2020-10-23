@@ -37,7 +37,7 @@ const Favourite = React.memo((props) => {
           <Popup className=""
             onClick={handleChange}
             trigger={
-              <div className="scrollbar">
+              <div className="scrollbar element">
                 <div>
                 
                   {e.name} {Math.round(e.temp - 273.15)}°C <Icon icon={e.icon} />{" "}

@@ -12,12 +12,13 @@ const api = {
 
 const Search = (props) => {
   
-  const {value, value2, value3, value4, value5} = useContext(SearchContext)
+  const {value, value2, value3, value4, value5, value6} = useContext(SearchContext)
   const [weather, setWeather] = value
   const [forecast, setForecast] = value2
   const [flag, setFlag] = value3
   const [address, setAddress] = value4
   const [view, setView] = value5
+  const [date, setDate] = value6
   const [notification, setNotification] = useState('')
   let e = ''
   // take first word from cities
@@ -40,10 +41,25 @@ const Search = (props) => {
         });
       // fetch cities' data to display flag and countries' information
       await fetch(`https://restcountries.eu/rest/v2/alpha/${dir}`)
-        .then((res) => res.json())
+        .then(response => response.json())
         .then((result) => {
           setFlag(result);
+          //fetch countries data and time
+      fetch(`https://rapidapi.p.rapidapi.com/v1/locale/timezones/${result.region}__${result.capital}/dateTime`, {
+            "method": "GET",
+            "headers": {
+              "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
+              "x-rapidapi-key": "5427736e2bmsh4d65d165c1a1ff7p195e42jsn564120e2a11b"
+            }
+          })
+          .then(response => response.json())
+          .then((result) => {
+            let data = result.data.slice(11,19)
+            setDate(data)
+          })
         });
+      
+    
       setAddress("");
     } catch (error) {
       setNotification({

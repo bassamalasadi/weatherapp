@@ -15,7 +15,7 @@ const Forecast = React.memo((props) => {
 
   const items = [];
   if (typeof props.data.list != "undefined") {
-    for (let i = 0; i < 40; i += 8) {
+    for (let i = 0; i < 39; i += 8) {
       let date = props.data.list[i].dt_txt.substring(0, 10);
       let d = new Date(date);
       let dayName = gsDayNames[d.getDay()];

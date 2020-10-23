@@ -19,7 +19,6 @@ const AddandCopy = (props) => {
         e.preventDefault()
         
             if(!data.includes(weather.name)){
-                console.log('data',data)
                 setFave(prev =>[ ...prev, {
                     id:weather.coord.lat,
                     name:weather.name,
@@ -32,7 +31,7 @@ const AddandCopy = (props) => {
     }
     return (
         <div>  
-            {data.includes(weather.name) ?
+            {!data.includes(weather.name) ?
                 <button value={props.name} type="button"  className="btn btn-warning buton" onClick={add}>
                     <BsFillStarFill /> Add {weather.name} to Favourites
                 </button>
