@@ -1,13 +1,15 @@
-  
 import React from 'react'
+import {useSpring, animated} from 'react-spring'
 
 const Notification = ({ message }) => {
+    const iconan = useSpring({opacity: 1, from: {opacity: 0}})
     if (message === null) {
         return null
     }
 
 let url = 'https://en.wikipedia.org/wiki/List_of_towns_and_cities_with_100,000_or_more_inhabitants/cityname:_A'
     return (
+        <animated.div style={iconan}>
         <div className={message.type}>
             { message.name ?(
               
@@ -20,7 +22,7 @@ let url = 'https://en.wikipedia.org/wiki/List_of_towns_and_cities_with_100,000_o
                          {message.name} 
                     </nobr>{message.content2} 
                     <nobr className="wiki">
-                        <a href={url} target="_blank" rel="noopener noreferrer"> Wikipedia</a>
+                        {typeof message.content3 != 'undefined' ?<a href={url} target="_blank" rel="noopener noreferrer"> Wikipedia</a> : ''}
                     </nobr>
                     {message.content3}
                     
@@ -34,6 +36,7 @@ let url = 'https://en.wikipedia.org/wiki/List_of_towns_and_cities_with_100,000_o
             
 
         </div>
+        </animated.div>
     )
 }
 

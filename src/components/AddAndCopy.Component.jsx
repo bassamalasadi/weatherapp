@@ -14,7 +14,7 @@ const AddandCopy = (props) => {
         data.push(e)
         return 0
     })
-    let show = {} 
+
     const add = (e) => {
         e.preventDefault()
         

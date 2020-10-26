@@ -1,18 +1,21 @@
 import React,{useState, useEffect} from "react";
 import Icon from "./Icons.Componet";
+import {useSpring, animated} from 'react-spring'
 
 const Weather = (props) => {
-  
+  console.log('weather', props)
+  const iconan = useSpring({opacity: 1, from: {opacity: 0}})
   let weather = props.weather
   let flag = props.flag
   let date = props.date
-
+  
   const [sec, setSec] = useState(0)
   const [min , setMin] = useState(0)
   // const [clo, setClo] = useState(0)
   let second = parseInt(date.slice(6,8))
   let minute = parseInt(date.slice(3,5))
   let clock = parseInt(date.slice(0,2))
+  
   useEffect(() => {
       if(second !== 'NAN'){
         setSec(second)
@@ -34,25 +37,29 @@ const Weather = (props) => {
       </div>
     )
   }
- 
+  
   return (
     <div className="">
+      <animated.div style={iconan}>
       <div className="info-box" >
         <div className="weather-container">
           <div className="leftSideContainer">
               <img src={flag.flag} alt="flag" className="countray-flag" /> <br />
                        
               <div className="degree">{Math.round(weather.main.temp - 273.15)}°C 
-               {/* {typeof props != "undefined" ? <Icon icon={weather.icon}  /> : ""} */}
-               <div className="currTime">
-                {clock >= 0 ? <Time /> : ''}          
                
+               <div className="currTime">
+                {clock >= 0 ?  <Time /> : ''}          
+
                </div>
                </div>
           </div>
           <div className="flag-box">
           <div className="weather-extra-countryName">{flag.nativeName} - {flag.name}</div>
           <div className="weather-city-name">{weather.name}, {weather.sys.country}</div> 
+          
+          <div className="weather-city-name"> {typeof props != "undefined" ? <Icon icon={weather.icon}  /> : ""}</div>
+          
           {/* <div className="weather-extra2">Current Time in {flag.capital} : {clock}:{min}:{sec}</div> */}
 
           </div>
@@ -69,7 +76,7 @@ const Weather = (props) => {
           </div>
         </div>
       </div>
-      
+      </animated.div>
     </div>
   );
 };

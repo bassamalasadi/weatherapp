@@ -1,8 +1,8 @@
 import React from "react";
 import Icon from "./Icons.Componet";
-const Forecast = React.memo((props) => {
-  // console.log(props.data.list[0].weather[0].id);
 
+const Forecast = React.memo((props) => {
+  
   let gsDayNames = [
     "Sunday",
     "Monday",
@@ -34,7 +34,10 @@ const Forecast = React.memo((props) => {
       );
     }
   }
-  return <div>{items}</div>;
+  return (
+  <div>
+    {items}
+  </div>);
 })
 
 export default Forecast;

@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 body {
-  left: 50%;
   margin: 0;
+  width: 100vw;
+  height: 100vh;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,7 +19,7 @@ code {
   background-color: #b3cdd1;
 
   background-size: cover;
-  background-color: #345688;
+  background-color: #19212b;
 }
 main {
   min-height: 100vh;
@@ -35,8 +36,8 @@ main {
 }
 .input-search {
   float: none;
-  background-color: transparent;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(22, 13, 13);
   padding: 7px;
   margin-left: 3px;
   width: 67%;
@@ -45,7 +46,7 @@ main {
   border: none;
   margin-left: 3px;
   border-radius: 6px;
-  background-color: #83ab91;
+
   margin-top: 1px;
   margin-right: 8px;
   font-family: "Segoe UI Light", "Segoe UI", "Segoe", Tahoma, Helvetica, Arial,
@@ -56,7 +57,7 @@ main {
 }
 
 .input-search::placeholder {
-  color: whitesmoke;
+  color: rgb(3, 3, 3);
   font-family: "Segoe UI Light", "Segoe UI", "Segoe", Tahoma, Helvetica, Arial,
     sans-serif;
   font-size: 1em;
@@ -230,6 +231,8 @@ ul {
   border-radius: 16px;
   padding: 5px 15px;
   color: #fdfdfd;
+  background-color: #5b6467;
+  background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
   font-size: 2vw;
   font-weight: 700;
   text-shadow: 1px 2px rgba(12, 12, 17, 0.5);
@@ -311,7 +314,6 @@ ul {
 }
 .weather-extra:hover {
   transform: translateX(20px) perspective(200px);
-
   -webkit-transform: translateX(20px) perspective(200px);
 }
 .weather-extra-countryName {
@@ -354,7 +356,7 @@ ul {
   display: inline-block;
   top: 55px;
   bottom: 30px;
-  width: 136px;
+  width: 138px;
   left: 27%;
   margin: 25px;
   margin-left: 10px;
@@ -364,13 +366,29 @@ ul {
   color: #fdfdfd;
   font-size: 1vw;
   font-weight: 700;
+  background-color: #5b6467;
+  background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
   text-shadow: 1px 1px rgba(11, 11, 126, 0.5);
   text-align: center;
   -webkit-box-shadow: 3px 3px 15px 11px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 3px 3px 15px 11px rgba(0, 0, 0, 0.75);
   box-shadow: 3px 3px 15px 11px rgba(0, 0, 0, 0.75);
+  transition: all ease-in-out 0.256s;
+  transform: translateZ(500px) perspective(500px) scale(1.04);
+  -webkit-transform: translateZ(500px) perspective(800px) scale(1.04);
+  -o-transform: translateZ(500px) perspective(800px) scale(1.04);
 }
 
+.forecast-box:hover {
+  transform: translateZ(500px) scale(1.08) perspective(20000px) rotateY(10deg) !important;
+
+  -webkit-transform: translateZ(500px) scale(1.08) perspective(20000px)
+    rotateY(10deg) !important;
+  box-shadow: 0 0 30px -1px #262626 !important;
+  -webkit-box-shadow: 0 0 30px -1px #262626 !important;
+
+  transform-style: preserve-3d !important;
+}
 .cards {
   position: relative;
   top: 50px;
@@ -389,6 +407,7 @@ ul {
   transition: 0.3s;
   transition: all 0.9s ease;
   -webkit-transition: all 0.9s ease;
+  z-index: 999;
 }
 .NotifiHeader {
   color: whitesmoke;

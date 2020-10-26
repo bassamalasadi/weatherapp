@@ -4,6 +4,7 @@ import PlacesAutocomplete from "react-places-autocomplete";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Notification from "../notification/Notification"
+import {useSpring, animated} from 'react-spring'
 const api = {
   keyWeather: "cbf3e6bbd09a990359dddac086ea6fb0",
   weather: "https://api.openweathermap.org/data/2.5/weather",
@@ -11,7 +12,7 @@ const api = {
 };
 
 const Search = (props) => {
-  
+  console.log(props.city)
   const {value, value2, value3, value4, value5, value6} = useContext(SearchContext)
   const [weather, setWeather] = value
   const [forecast, setForecast] = value2
@@ -20,11 +21,14 @@ const Search = (props) => {
   const [view, setView] = value5
   const [date, setDate] = value6
   const [notification, setNotification] = useState('')
+
+  const iconan = useSpring({opacity: 1, from: {opacity: 0}})
   let e = ''
   // take first word from cities
   const search = async (e) => {
     if(e != ''){
       let dir = "";
+      let e = props.city
     try {
       // fetch weather api
       await fetch(`${api.weather}?q=${e}&appid=${api.keyWeather}`)
@@ -42,10 +46,10 @@ const Search = (props) => {
       // fetch cities' data to display flag and countries' information
       await fetch(`https://restcountries.eu/rest/v2/alpha/${dir}`)
         .then(response => response.json())
-        .then((result) => {
+        .then(async(result) => {
           setFlag(result);
-          //fetch countries data and time
-      fetch(`https://rapidapi.p.rapidapi.com/v1/locale/timezones/${result.region}__${result.capital}/dateTime`, {
+          //fetch capitals' time
+      await fetch(`https://wft-geo-db.p.rapidapi.com/v1/locale/timezones/${result.region}__${result.capital.replace(/ /g,"_")}/dateTime`, {
             "method": "GET",
             "headers": {
               "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
@@ -56,6 +60,18 @@ const Search = (props) => {
           .then((result) => {
             let data = result.data.slice(11,19)
             setDate(data)
+          })
+          .catch(err => {
+            setDate("")
+            setNotification({
+              content: 'The current time of the capital " ',
+              name: result.capital,
+              content2:' " is not currently available',
+              type: 'Error'
+          })
+          setTimeout(() => {
+            setNotification(null)
+        }, 5000)
           })
         });
       
@@ -77,7 +93,6 @@ const Search = (props) => {
     
   const handleSelect = async (e) => {
     let regix = e.split(",")[0];
-    console.log('regix',regix)
     search(regix);
   };
   useEffect(() => {
@@ -108,7 +123,9 @@ return(
                       {...getInputProps({ placeholder: `Search Places...` })}
                       className="input-search"
                     />
+                    
                     <FontAwesomeIcon icon={faSearch} color="white" />
+                    <animated.div style={iconan}>
                     <div className="search-list" >
                       {suggestions.map((suggestion) => {
                         return (
@@ -133,7 +150,7 @@ return(
                       })}
                     
                     </div>
-                    
+                    </animated.div>
                   </div>
                 )}
       </PlacesAutocomplete>
