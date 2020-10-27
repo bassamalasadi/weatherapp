@@ -18,7 +18,7 @@ function App() {
     return(
      <Router>
       <div>
-          <Route exact path='/' component={HomePage} /> 
+          <Route exact path='/weatherapp' component={HomePage} /> 
           <Route exact path={`/city/:cityname`} component={CityPage} />
       </div>
       </Router>
