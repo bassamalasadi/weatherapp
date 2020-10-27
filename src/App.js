@@ -19,7 +19,7 @@ function App() {
      <Router>
       <div>
           <Route exact path='/weatherapp' component={HomePage} /> 
-          <Route exact path={`/city/:cityname`} component={CityPage} />
+          <Route exact path={`/weatherapp/:cityname`} component={CityPage} />
       </div>
       </Router>
     )
