@@ -6,10 +6,7 @@ import HomePage from "./pages/HomePage"
 import CityPage from "./pages/CityPage"
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
-  Redirect
 } from "react-router-dom";
 
 function App() {
@@ -21,21 +18,18 @@ function App() {
     return(
      <Router>
       <div>
-         {city.length < 2  ? <Route exact path='/' component={HomePage} /> : <Route exact path='/city/:id' component={CityPage} />}
-        {/* <Route path='/' component={HomePage} />
-        <Route exect path='/city/:id' component={CityPage} /> */}
+          <Route exact path='/' component={HomePage} /> 
+          <Route exact path={`/city/:cityname`} component={CityPage} />
       </div>
       </Router>
     )
   }
   return (
-   
     <FavouritesProvider>
       <SearchProvider>
         <View />
       </SearchProvider>
     </FavouritesProvider>
-  
   );
 }
 export default App;

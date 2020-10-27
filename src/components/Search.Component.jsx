@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Notification from "../notification/Notification"
 import {useSpring, animated} from 'react-spring'
+import {useParams} from 'react-router-dom'
 const api = {
   keyWeather: "cbf3e6bbd09a990359dddac086ea6fb0",
   weather: "https://api.openweathermap.org/data/2.5/weather",
@@ -12,7 +13,7 @@ const api = {
 };
 
 const Search = (props) => {
-  console.log(props.city)
+  const {cityname} = useParams()
   const {value, value2, value3, value4, value5, value6} = useContext(SearchContext)
   const [weather, setWeather] = value
   const [forecast, setForecast] = value2
@@ -21,14 +22,14 @@ const Search = (props) => {
   const [view, setView] = value5
   const [date, setDate] = value6
   const [notification, setNotification] = useState('')
-
+ 
   const iconan = useSpring({opacity: 1, from: {opacity: 0}})
-  let e = ''
+  let e = cityname
   // take first word from cities
   const search = async (e) => {
+
     if(e != ''){
       let dir = "";
-      let e = props.city
     try {
       // fetch weather api
       await fetch(`${api.weather}?q=${e}&appid=${api.keyWeather}`)
@@ -74,8 +75,6 @@ const Search = (props) => {
         }, 5000)
           })
         });
-      
-    
       setAddress("");
     } catch (error) {
       setNotification({
@@ -94,11 +93,15 @@ const Search = (props) => {
   const handleSelect = async (e) => {
     let regix = e.split(",")[0];
     search(regix);
+    // setView(regix)
+    console.log('regix', regix)
   };
   useEffect(() => {
     e = props.city
+    if(typeof e != 'undefined'){
     let regix = e.split(",")[0];
     search(regix);
+    }
   }, [view])
   // let placeId = ""
   
@@ -123,7 +126,6 @@ return(
                       {...getInputProps({ placeholder: `Search Places...` })}
                       className="input-search"
                     />
-                    
                     <FontAwesomeIcon icon={faSearch} color="white" />
                     <animated.div style={iconan}>
                     <div className="search-list" >
@@ -145,10 +147,10 @@ return(
                               </li>
                             </ul>
                           </div>
+                          
                           </div> 
                         );
                       })}
-                    
                     </div>
                     </animated.div>
                   </div>

@@ -12,7 +12,6 @@ const Forecast = React.memo((props) => {
     "Friday",
     "Saturday",
   ];
-
   const items = [];
   if (typeof props.data.list != "undefined") {
     for (let i = 0; i < 39; i += 8) {

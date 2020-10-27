@@ -1,7 +1,6 @@
 import React from "react";
 
 const Icon = (props) => {
-  // console.log("icon", props);
   let icon = "";
   let rangeId = props.icon;
   switch (true) {
@@ -29,7 +28,6 @@ const Icon = (props) => {
     default:
       icon = "03d";
   }
-
   return (
     <div>
       <img

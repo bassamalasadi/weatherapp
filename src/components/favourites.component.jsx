@@ -8,6 +8,7 @@ import {FavouritesContext} from '../Context/FavouritesContext'
 import {SearchContext} from '../Context/SearchContext'
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Favourite = React.memo((props) => {
   const { value5 } = useContext(SearchContext)
@@ -23,12 +24,10 @@ const Favourite = React.memo((props) => {
     localStorage.removeItem(`${name}`);
   };
   const handleChange = async () => {};
-
   const handleView = (e) => {
     setShowModel(true)
     setView(e)
   }
-  
   const list =   
     fave.map((e) => {
      return(
@@ -39,7 +38,6 @@ const Favourite = React.memo((props) => {
             trigger={
               <div className="scrollbar element">
                 <div>
-                
                   {e.name} {Math.round(e.temp - 273.15)}°C <Icon icon={e.icon} />{" "}
                   <button
                     type="button"
@@ -54,12 +52,11 @@ const Favourite = React.memo((props) => {
             }
             position="left center"
           >
-            
-
             <Card.Header><nobr><h4>{e.name}</h4> <div>
+            <Link to={`/city/${e.name}`}>
             <button className="btn btn-success" onClick={()=> handleView(e.name)}> View</button>
+            </Link>
             </div></nobr></Card.Header>
-            
             {typeof e.description != "undefined" ? (
               <Card.Body>
               <div id={e.iconId} key={e.name}>
@@ -68,13 +65,10 @@ const Favourite = React.memo((props) => {
                 value={e.iconId}
                 style={{ backgroundImage: `url(${props.flag})` }}
               >
-
                 <div>
                 <Card.Title> Description </Card.Title>
-                
                 </div>
                 <Card.Text>
-              
                 {e.main}
                 {e.description}
                 <br />
@@ -82,16 +76,13 @@ const Favourite = React.memo((props) => {
                 Coordinates
                 Latitude: {e.lat}<br />
                 Longitude: {e.lon}<br />
-                
                 </Card.Text>
               </div>
             </div>
-            
             </Card.Body>
             ): (
               ""
             )}
-            
           </Popup>
           </Delay>
         </div>
@@ -99,7 +90,6 @@ const Favourite = React.memo((props) => {
     })
   return (
     <div>
-      
       <div className=" favourite">
             <div > Favourites! </div>
               <div className="scroll">

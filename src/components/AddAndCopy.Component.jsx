@@ -1,12 +1,12 @@
-import React, { useState,useContext} from 'react'
+import React, { useState,useRef,useContext} from 'react'
 import {FavouritesContext} from '../Context/FavouritesContext'
 import { BsFillStarFill } from "react-icons/bs"
 import { AiFillCopy } from "react-icons/ai";
-
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const AddandCopy = (props) => {
 
-    const [fave,setFave] = useContext(FavouritesContext)   
+    const [fave,setFave] = useContext(FavouritesContext);  
     const weather = props.props
     const items = {...localStorage}
     let data = []
@@ -17,7 +17,6 @@ const AddandCopy = (props) => {
 
     const add = (e) => {
         e.preventDefault()
-        
             if(!data.includes(weather.name)){
                 setFave(prev =>[ ...prev, {
                     id:weather.coord.lat,
@@ -26,7 +25,6 @@ const AddandCopy = (props) => {
                     icon:weather.weather[0].id
                   }]) 
                 localStorage.setItem(`${weather.name}`, JSON.stringify(weather.name));
-            
             }
     }
     return (
@@ -37,13 +35,13 @@ const AddandCopy = (props) => {
                 </button>
                 : null
             }
-            
             {" "}{" "}{" "}
+            <CopyToClipboard text={window.location.href}>
             <button type="button" className="btn btn-warning button buton">
                   <AiFillCopy className="" /> Copy {weather.name} Weather
-                </button>
-        </div>
-        
+            </button>
+            </CopyToClipboard>
+        </div> 
     )
 }
 export default AddandCopy
