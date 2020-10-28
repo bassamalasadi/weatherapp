@@ -139,7 +139,7 @@ return(
                                   <div className="searchIcon"></div>
                                   <i className="material-icons">location_on</i>
                                   <div className="searchItem">
-                                  <Link to={`/weatherapp/${suggestion.description.split(",")[0]}`}>
+                                  <Link to={`/city/${suggestion.description.split(",")[0]}`}>
                                   <span className="searchRes">{suggestion.description}</span>
                                   </ Link>
                                   </div>
