@@ -16,10 +16,10 @@ function App() {
     const [view] = value5
     city = view; 
     return(
-     <Router>
+     <Router history={history} basename={process.env.PUBLIC_URL}>
       <div>
-          <Route exact path='/weatherapp' component={HomePage} /> 
-          <Route exact path={`/weatherapp/:cityname`} component={CityPage} />
+          <Route exact path='/' component={HomePage} /> 
+          <Route exact path={`/city/:cityname`} component={CityPage} />
       </div>
       </Router>
     )
