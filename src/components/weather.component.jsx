@@ -41,8 +41,10 @@ const Weather = (props) => {
         <div className="weather-container">
           <div className="leftSideContainer">
               <img src={flag.flag} alt="flag" className="countray-flag" /> <br />        
-              <div className="degree">{Math.round(weather.main.temp - 273.15)}°C 
-              {typeof props != "undefined" ? <Icon icon={weather.icon}  /> : ""}
+              <div className="degree">
+                {typeof props != "undefined" ? <Icon icon={weather.icon}  /> : ""}  
+                {Math.round(weather.main.temp - 273.15)}°C 
+              
                {/* <div className="currTime">
                 {clock >= 0 ?  <Time /> : ''}          
                </div> */}

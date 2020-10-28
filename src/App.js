@@ -5,7 +5,7 @@ import {SearchContext, SearchProvider} from "./Context/SearchContext"
 import HomePage from "./pages/HomePage"
 import CityPage from "./pages/CityPage"
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
 } from "react-router-dom";
 

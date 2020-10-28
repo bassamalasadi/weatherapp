@@ -7,6 +7,7 @@ import Favourite from "../components/Favourites.Component";
 import Search from "../components/Search.Component"
 import {useSpring, animated} from 'react-spring'
 import {useParams} from "react-router-dom"
+import WeatherApp from "../components/weatherApp"
 
 function CityPage(){
     const cityname = useParams()
@@ -25,8 +26,8 @@ function CityPage(){
     <animated.div style={iconan}>
       <div className="App">  
         <main>    
-        <div>
-            <Search city={view} />              
+        <div >
+         <Search city={view} />              
           </div>      
                 {/* display two button */}
                 <div className="mainCard">

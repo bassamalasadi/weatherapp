@@ -6,6 +6,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Notification from "../notification/Notification"
 import {useSpring, animated} from 'react-spring'
 import {useParams, Link} from 'react-router-dom'
+
 const api = {
   keyWeather: "cbf3e6bbd09a990359dddac086ea6fb0",
   weather: "https://api.openweathermap.org/data/2.5/weather",
@@ -106,6 +107,8 @@ const Search = (props) => {
   
 return( 
   <div className=""> 
+   
+
     <PlacesAutocomplete
                 value={address}
                 onChange={setAddress}
