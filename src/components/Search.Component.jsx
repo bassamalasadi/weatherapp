@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Notification from "../notification/Notification"
 import {useSpring, animated} from 'react-spring'
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 const api = {
   keyWeather: "cbf3e6bbd09a990359dddac086ea6fb0",
   weather: "https://api.openweathermap.org/data/2.5/weather",
@@ -20,7 +20,7 @@ const Search = (props) => {
   const [flag, setFlag] = value3
   const [address, setAddress] = value4
   const [view, setView] = value5
-  const [date, setDate] = value6
+  // const [date, setDate] = value6
   const [notification, setNotification] = useState('')
  
   const iconan = useSpring({opacity: 1, from: {opacity: 0}})
@@ -50,31 +50,32 @@ const Search = (props) => {
         .then(async(result) => {
           setFlag(result);
           //fetch capitals' time
-      await fetch(`https://wft-geo-db.p.rapidapi.com/v1/locale/timezones/${result.region}__${result.capital.replace(/ /g,"_")}/dateTime`, {
-            "method": "GET",
-            "headers": {
-              "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
-              "x-rapidapi-key": "5427736e2bmsh4d65d165c1a1ff7p195e42jsn564120e2a11b"
-            }
-          })
-          .then(response => response.json())
-          .then((result) => {
-            let data = result.data.slice(11,19)
-            setDate(data)
-          })
-          .catch(err => {
-            setDate("")
-            setNotification({
-              content: 'The current time of the capital " ',
-              name: result.capital,
-              content2:' " is not currently available',
-              type: 'Error'
-          })
-          setTimeout(() => {
-            setNotification(null)
-        }, 5000)
-          })
+      // await fetch(`https://wft-geo-db.p.rapidapi.com/v1/locale/timezones/${result.region}__${result.capital.replace(/ /g,"_")}/dateTime`, {
+      //       "method": "GET",
+      //       "headers": {
+      //         "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
+      //         "x-rapidapi-key": "5427736e2bmsh4d65d165c1a1ff7p195e42jsn564120e2a11b"
+      //       }
+      //     })
+      //     .then(response => response.json())
+      //     .then((result) => {
+            
+      //       let data = result.data.slice(11,19)
+      //       setDate(data)
+      //     })
+      //     .catch(err => {
+      //       setNotification({
+      //         content: 'The current time of the capital " ',
+      //         name: result.capital,
+      //         content2:' " is not currently available',
+      //         type: 'Error'
+      //     })
+      //     setTimeout(() => {
+      //       setNotification(null)
+      //   }, 5000)
+      //     })
         });
+        
       setAddress("");
     } catch (error) {
       setNotification({
@@ -93,8 +94,7 @@ const Search = (props) => {
   const handleSelect = async (e) => {
     let regix = e.split(",")[0];
     search(regix);
-    // setView(regix)
-    console.log('regix', regix)
+    console.log(regix)
   };
   useEffect(() => {
     e = props.city
@@ -103,10 +103,9 @@ const Search = (props) => {
     search(regix);
     }
   }, [view])
-  // let placeId = ""
   
 return( 
-  <div className="">
+  <div className=""> 
     <PlacesAutocomplete
                 value={address}
                 onChange={setAddress}
@@ -119,7 +118,6 @@ return(
                   getInputProps,
                   suggestions,
                   getSuggestionItemProps,
-                 
                 }) => (
                   <div className="HeadSearech">
                     <input
@@ -141,13 +139,14 @@ return(
                                   <div className="searchIcon"></div>
                                   <i className="material-icons">location_on</i>
                                   <div className="searchItem">
+                                  <Link to={`/weatherapp/${suggestion.description.split(",")[0]}`}>
                                   <span className="searchRes">{suggestion.description}</span>
+                                  </ Link>
                                   </div>
                                 </div>
                               </li>
                             </ul>
                           </div>
-                          
                           </div> 
                         );
                       })}

@@ -53,7 +53,7 @@ const Favourite = React.memo((props) => {
             position="left center"
           >
             <Card.Header><nobr><h4>{e.name}</h4> <div>
-            <Link to={`/city/${e.name}`}>
+            <Link to={`/weatherapp/${e.name}`}>
             <button className="btn btn-success" onClick={()=> handleView(e.name)}> View</button>
             </Link>
             </div></nobr></Card.Header>

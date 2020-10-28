@@ -14,7 +14,6 @@ const AddandCopy = (props) => {
         data.push(e)
         return 0
     })
-
     const add = (e) => {
         e.preventDefault()
             if(!data.includes(weather.name)){

@@ -2,17 +2,10 @@ import React,{useContext} from 'react'
 import {SearchContext} from "../Context/SearchContext"
 import Favourite from "../components/Favourites.Component";
 import Search from "../components/Search.Component"
-import Weather from "../components/Weather.Component";
-import Forecast from "../components/Forecast.Component";
-import AddandCopy from "../components/AddAndCopy.Component";
 import {useSpring, animated} from 'react-spring'
 function HomePage(){
-  const {value, value2, value3, value5, value6} = useContext(SearchContext)
-  const [weather] = value
-  const [forecast] = value2
-  const [flag] = value3
+  const { value5} = useContext(SearchContext)
   const [view] = value5
-  const [date] = value6
   const iconan = useSpring({opacity: 1, from: {opacity: 0}})
     return( 
         <animated.div style={iconan}>
@@ -21,22 +14,6 @@ function HomePage(){
           <div>
             <Search city={view} />              
           </div>
-          {/* display two button */}
-          <div className="mainCard">
-                {typeof weather.main != "undefined" ? (
-                <div className="">
-                    <div className="cards">
-                    <AddandCopy  props={weather}/><br />
-                    </div>
-                    <div className="cards">
-                    <Weather weather={weather} flag={flag} date={date} /><br />
-                    </div>
-                    <Forecast data={forecast} />          
-                </div>
-                ) : (
-                ""
-                )}
-                </div>
             <Favourite/>
       </main>
     </div>
