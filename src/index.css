@@ -286,20 +286,7 @@ ul {
   text-shadow: 2px 3px rgba(50, 50, 70, 0.5);
   text-align: left;
 }
-.side-info {
-  position: sticky;
-  float: left;
-  right: 45%;
-  margin: 30px auto;
-  margin-right: 20px;
-  border-radius: 16px;
-  padding: 5px 25px;
-  color: #ffffff;
-  font-size: 2em;
-  font-weight: 700;
-  text-shadow: 2px 3px rgba(50, 50, 70, 0.5);
-  text-align: left;
-}
+
 .weather-extra {
   font-size: 15px;
   font-weight: 500;
@@ -382,11 +369,6 @@ ul {
   -webkit-box-shadow: 2px 2px 10px 7px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 2px 2px 10px 7px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 2px 10px 7px rgba(0, 0, 0, 0.75);
-  transition: all ease-in-out 0.256s;
-  transform: translateZ(500px) perspective(500px) scale(1.04);
-  -webkit-transform: translateZ(500px) perspective(800px) scale(1.04);
-  -o-transform: translateZ(500px) perspective(800px) scale(1.04);
-  z-index: 0;
 }
 
 .forecast-box:hover {
