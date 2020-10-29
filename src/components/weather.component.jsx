@@ -24,7 +24,7 @@ const Weather = (props) => {
           <div className="weather-description"> {weather.weather[0].description}</div>
           </div>
           <div className="">
-            <div className="">
+            <div className="flag-box">
               <h5 className="weather-extra">Capital : {flag.capital}</h5>
               <h5 className="weather-extra">Region : {flag.region}</h5>
               <h5 className="weather-extra">Humidity : {weather.main.humidity}%</h5>

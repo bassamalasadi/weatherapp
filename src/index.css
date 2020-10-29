@@ -32,8 +32,8 @@ main {
 .HeadSearech {
   position: relative;
   top: 20px;
-  width: 80%;
-  left: 20%;
+  width: 70%;
+  left: 30%;
 }
 .input-search {
   float: none;
@@ -183,6 +183,7 @@ ul {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  z-index: 990;
 }
 
 .scrollbar {
@@ -285,7 +286,20 @@ ul {
   text-shadow: 2px 3px rgba(50, 50, 70, 0.5);
   text-align: left;
 }
-
+.side-info {
+  position: sticky;
+  float: left;
+  right: 45%;
+  margin: 30px auto;
+  margin-right: 20px;
+  border-radius: 16px;
+  padding: 5px 25px;
+  color: #ffffff;
+  font-size: 2em;
+  font-weight: 700;
+  text-shadow: 2px 3px rgba(50, 50, 70, 0.5);
+  text-align: left;
+}
 .weather-extra {
   font-size: 15px;
   font-weight: 500;
