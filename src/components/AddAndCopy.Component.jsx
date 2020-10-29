@@ -1,4 +1,4 @@
-import React, { useState,useRef,useContext} from 'react'
+import React, {useContext} from 'react'
 import {FavouritesContext} from '../Context/FavouritesContext'
 import { BsFillStarFill } from "react-icons/bs"
 import { AiFillCopy } from "react-icons/ai";

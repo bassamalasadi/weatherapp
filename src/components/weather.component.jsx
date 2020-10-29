@@ -6,34 +6,6 @@ const Weather = (props) => {
   const iconan = useSpring({opacity: 1, from: {opacity: 0}})
   let weather = props.weather
   let flag = props.flag
-  let date = props.date
-  
-  const [sec, setSec] = useState(0)
-  const [min , setMin] = useState(0)
- 
-  let second = parseInt(date.slice(6,8))
-  let minute = parseInt(date.slice(3,5))
-  let clock = parseInt(date.slice(0,2))
-
-  useEffect(() => {
-      if(second !== 'NAN'){
-        setSec(second)
-        setMin(minute)
-        const interval = setInterval(() => {
-            setSec(prev => prev < 59 ? prev + 1 : (
-              setSec(0),
-              setMin(minute + 1) ))
-        }, 1000);
-      return () => clearInterval(interval);
-      }
-  }, [second])
-  let Time =() => {
-    return(
-      <div>
-        {clock}:{min}:{sec}
-      </div>
-    )
-  }
   return (
     <div className="">
       <animated.div style={iconan}>
@@ -44,10 +16,6 @@ const Weather = (props) => {
               <div className="degree">
                 {typeof props != "undefined" ? <Icon icon={weather.icon}  /> : ""}  
                 {Math.round(weather.main.temp - 273.15)}°C 
-              
-               {/* <div className="currTime">
-                {clock >= 0 ?  <Time /> : ''}          
-               </div> */}
                </div>
           </div>
           <div className="flag-box">

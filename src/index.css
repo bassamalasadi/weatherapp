@@ -43,11 +43,9 @@ main {
   margin-left: 3px;
   width: 67%;
   position: relative;
-
   border: none;
   margin-left: 3px;
   border-radius: 6px;
-
   margin-top: 1px;
   margin-right: 8px;
   font-family: "Segoe UI Light", "Segoe UI", "Segoe", Tahoma, Helvetica, Arial,
@@ -72,7 +70,7 @@ main {
   left: 2px;
   text-align: left;
   margin-top: 4px;
-  z-index: 909;
+  z-index: 999;
   cursor: default;
   -webkit-user-select: none;
   background-color: white;
@@ -112,17 +110,6 @@ main {
   transition: all 0.9s ease;
   -webkit-transition: all 0.9s ease;
 }
-/* .searchIcon {
-  background: url(/images/searchbox/desktop_searchbox_sprites302_hr.webp)
-    no-repeat 0 0;
-  background-size: 20px;
-  min-height: 20px;
-  min-width: 20px;
-  height: 20px;
-  width: 20px;
-  transition: all 0.9s ease;
-  -webkit-transition: all 0.9s ease;
-} */
 .searchItem {
   display: flex;
   flex: auto;
@@ -224,9 +211,9 @@ ul {
 .info-box {
   position: relative;
   display: inline-block;
-  width: 75%;
+  width: 70%;
   height: 300px;
-  left: 5%;
+  left: 12%;
   margin-left: 1%;
   top: 40px;
   border-radius: 16px;
@@ -251,10 +238,10 @@ ul {
 
 .leftSideContainer {
   position: absolute;
-  top: -30px;
-  left: -30px;
-  width: 320px;
-  height: 400px;
+  top: -50px;
+  left: -15%;
+  width: 30%;
+  height: 200%;
   border-radius: 25px;
   background-image: url(https://images.unsplash.com/photo-1550236520-7050f3582da0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80);
   background-position: center;
@@ -349,17 +336,17 @@ ul {
 .countray-flag {
   width: auto;
   height: 150px;
-  margin-top: 10px;
+  margin-top: 34px;
   margin-bottom: 5px;
   border-radius: 16px;
-  -webkit-box-shadow: 1px 1px 16px 5px rgba(255, 255, 255, 0.75);
-  -moz-box-shadow: 1px 1px 16px 5px rgba(255, 255, 255, 0.75);
-  box-shadow: 1px 1px 16px 5px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 5px 5px 16px 10px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 5px 5px 16px 10px rgba(255, 255, 255, 0.75);
+  box-shadow: 5px 5px 16px 10px rgba(255, 255, 255, 0.75);
 }
 .degree {
   margin-top: -30px;
-  font-size: 3em;
-  font-weight: 700;
+  font-size: 4em;
+  font-weight: 900;
 }
 /* Forecast component */
 .forecast-box {
@@ -369,8 +356,8 @@ ul {
   bottom: 30px;
   width: 138px;
   left: 27%;
-  margin: 25px;
-  margin-left: 10px;
+  margin: 20px;
+  margin-left: 0;
   background-color: #5c595779;
   border-radius: 16px;
   padding: 5px 15px;

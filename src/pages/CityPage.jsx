@@ -7,7 +7,7 @@ import Favourite from "../components/Favourites.Component";
 import Search from "../components/Search.Component"
 import {useSpring, animated} from 'react-spring'
 import {useParams} from "react-router-dom"
-import WeatherApp from "../components/weatherApp"
+// import WeatherApp from "../components/weatherApp"
 
 function CityPage(){
     const cityname = useParams()

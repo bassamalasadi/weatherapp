@@ -15,12 +15,12 @@ const api = {
 
 const Search = (props) => {
   const {cityname} = useParams()
-  const {value, value2, value3, value4, value5, value6} = useContext(SearchContext)
+  const {value, value2, value3, value4, value5} = useContext(SearchContext)
   const [weather, setWeather] = value
   const [forecast, setForecast] = value2
   const [flag, setFlag] = value3
   const [address, setAddress] = value4
-  const [view, setView] = value5
+  const [view] = value5
   // const [date, setDate] = value6
   const [notification, setNotification] = useState('')
  
