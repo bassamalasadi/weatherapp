@@ -20,7 +20,7 @@ code {
   background-color: #b3cdd1;
 
   background-size: cover;
-  background-color: #83a0c2;
+  background-color: #afcae9;
 }
 main {
   min-height: 100vh;
@@ -112,7 +112,7 @@ main {
   transition: all 0.9s ease;
   -webkit-transition: all 0.9s ease;
 }
-.searchIcon {
+/* .searchIcon {
   background: url(/images/searchbox/desktop_searchbox_sprites302_hr.webp)
     no-repeat 0 0;
   background-size: 20px;
@@ -122,7 +122,7 @@ main {
   width: 20px;
   transition: all 0.9s ease;
   -webkit-transition: all 0.9s ease;
-}
+} */
 .searchItem {
   display: flex;
   flex: auto;
@@ -188,7 +188,7 @@ ul {
   border-radius: 6px;
   padding: 5px 15px;
   color: #ffffff;
-  background-color: #007bc79a;
+  background-image: linear-gradient(115deg, #1f2024 54%, #e4c76b 0%);
   font-size: 20px;
   font-weight: 500;
   font-family: Franklin Gothic Medium;
@@ -202,7 +202,7 @@ ul {
   height: auto;
   font-size: 1vw;
   font-weight: 200;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 10px;
   background-color: rgba(189, 187, 187, 0.5);
   border-radius: 10px;
@@ -212,7 +212,7 @@ ul {
 }
 
 .scroll {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .star {
   margin-bottom: -10px;
@@ -232,8 +232,7 @@ ul {
   border-radius: 16px;
   padding: 5px 15px;
   color: #fdfdfd;
-  background-color: #5b6467;
-  background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+  background-image: linear-gradient(315deg, #1f2024 34%, #a7c9f7 80%);
   font-size: 2vw;
   font-weight: 700;
   text-shadow: 1px 2px rgba(12, 12, 17, 0.5);
@@ -348,7 +347,7 @@ ul {
   width: 80%;
 }
 .countray-flag {
-  width: 260px;
+  width: auto;
   height: 150px;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -378,13 +377,12 @@ ul {
   color: #fdfdfd;
   font-size: 1vw;
   font-weight: 700;
-  background-color: #5b6467;
-  background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+  background-image: linear-gradient(315deg, #a7c9f7 0%, #1f2024 74%);
   text-shadow: 1px 1px rgba(11, 11, 126, 0.5);
   text-align: center;
-  -webkit-box-shadow: 3px 3px 15px 11px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 3px 3px 15px 11px rgba(0, 0, 0, 0.75);
-  box-shadow: 3px 3px 15px 11px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 2px 10px 7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 10px 7px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 10px 7px rgba(0, 0, 0, 0.75);
   transition: all ease-in-out 0.256s;
   transform: translateZ(500px) perspective(500px) scale(1.04);
   -webkit-transform: translateZ(500px) perspective(800px) scale(1.04);
@@ -393,7 +391,7 @@ ul {
 
 .forecast-box:hover {
   transform: translateZ(500px) scale(1.08) perspective(20000px) rotateY(10deg) !important;
-
+  background-color: #6d7070;
   -webkit-transform: translateZ(500px) scale(1.08) perspective(20000px)
     rotateY(10deg) !important;
   box-shadow: 0 0 30px -1px #262626 !important;

@@ -70,7 +70,7 @@ const Favourite = React.memo((props) => {
                 </div>
                 <Card.Text>
                 {e.main}
-                {e.description}
+                
                 <br />
                 <br />
                 Coordinates
