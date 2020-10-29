@@ -12,9 +12,9 @@ import { Link } from 'react-router-dom';
 
 const Favourite = React.memo((props) => {
   const { value5 } = useContext(SearchContext)
-  const [setView] = value5
+  const [view, setView] = value5
   const [fave, setFave] = useContext(FavouritesContext)
-  const [setShowModel] = useState(false)
+  const [showModel, setShowModel] = useState(false)
   
   const del = (idx) => {
     const temp = [...fave]
@@ -30,6 +30,7 @@ const Favourite = React.memo((props) => {
   }
   const list =   
     fave.map((e) => {
+
      return(
         <div key={e.id}>
           <Delay wait={100} >
