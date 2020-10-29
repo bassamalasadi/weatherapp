@@ -30,7 +30,6 @@ const Favourite = React.memo((props) => {
   }
   const list =   
     fave.map((e) => {
-
      return(
         <div key={e.id}>
           <Delay wait={100} >

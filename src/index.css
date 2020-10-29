@@ -239,7 +239,7 @@ ul {
 
 .leftSideContainer {
   position: absolute;
-  top: -50px;
+  top: -70px;
   left: -15%;
   width: 30%;
   height: 200%;
@@ -249,7 +249,7 @@ ul {
   background-repeat: no-repeat;
   color: white;
   font-family: calibri;
-  transition: all ease-in-out 0.256s;
+  transition: all ease-in-out 0.956s;
   transform: translateZ(500px) perspective(500px) scale(1.04);
   -webkit-transform: translateZ(500px) perspective(800px) scale(1.04);
   -o-transform: translateZ(500px) perspective(800px) scale(1.04);
@@ -258,6 +258,7 @@ ul {
   border: none;
   float: left;
   transition: all cubic-bezier(0.34, 0.85, 0.35, 0.86) 0.45s;
+  z-index: 900;
 }
 
 .leftSideContainer:hover {
@@ -273,7 +274,7 @@ ul {
 .flag-box {
   position: sticky;
   float: left;
-  left: 20%;
+  right: 45%;
   margin: 30px auto;
   margin-right: 20px;
   border-radius: 16px;
@@ -284,12 +285,7 @@ ul {
   text-shadow: 2px 3px rgba(50, 50, 70, 0.5);
   text-align: left;
 }
-.currTime {
-  font-size: 55px;
-  transition-timing-function: ease-out;
-  transition: 0.55s;
-  transform: translateY(0);
-}
+
 .weather-extra {
   font-size: 15px;
   font-weight: 500;
@@ -304,6 +300,7 @@ ul {
   transform: translateX(20px) perspective(200px);
   -webkit-transform: translateX(20px) perspective(200px);
 }
+
 .weather-extra-countryName {
   position: relative;
   color: #fdfdfd;
@@ -375,6 +372,7 @@ ul {
   transform: translateZ(500px) perspective(500px) scale(1.04);
   -webkit-transform: translateZ(500px) perspective(800px) scale(1.04);
   -o-transform: translateZ(500px) perspective(800px) scale(1.04);
+  z-index: 0;
 }
 
 .forecast-box:hover {
