@@ -11,7 +11,7 @@ import { faFile } from '@fortawesome/free-solid-svg-icons'
 function HomePage(){
   const { value5} = useContext(SearchContext)
   const [view] = value5
-
+  const iconan = useSpring({opacity: 1, from: {opacity: 0},transition: '1s'})
     return(  
       <div className="App">  
       <UseDate />
@@ -20,6 +20,7 @@ function HomePage(){
             <Search city={view} />        
           </div>       
             <Favourite/>
+            <animated.div style={iconan}>
             <div className="page-wrap">
               <div id="card1" className="card">
                 <div className="center">
@@ -44,7 +45,7 @@ function HomePage(){
                 </div>
               </div>
             </div>  
-          
+            </animated.div>
       </main>
       
     </div>
