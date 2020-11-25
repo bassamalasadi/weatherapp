@@ -4,6 +4,7 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 import {SearchProvider} from "./Context/SearchContext"
 import HomePage from "./pages/HomePage"
 import CityPage from "./pages/CityPage"
+
 import {
   HashRouter as Router,
   Route,

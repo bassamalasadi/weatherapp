@@ -3,9 +3,9 @@ import {FavouritesContext} from '../Context/FavouritesContext'
 import { BsFillStarFill } from "react-icons/bs"
 import { AiFillCopy } from "react-icons/ai";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-
+import {useSpring, animated} from 'react-spring'
 const AddandCopy = (props) => {
-
+    const iconan = useSpring({opacity: 1, from: {opacity: 0},transition: '1s'})
     const [fave,setFave] = useContext(FavouritesContext);  
     const weather = props.props
     const items = {...localStorage}
@@ -27,6 +27,7 @@ const AddandCopy = (props) => {
             }
     }
     return (
+        <animated.div style={iconan}>
         <div>  
             {!data.includes(weather.name) ?
                 <button value={props.name} type="button"  className="btn btn-warning buton" onClick={add}>
@@ -41,6 +42,7 @@ const AddandCopy = (props) => {
             </button>
             </CopyToClipboard>
         </div> 
+        </animated.div>
     )
 }
 export default AddandCopy

@@ -28,6 +28,7 @@ const Favourite = React.memo((props) => {
     setShowModel(true)
     setView(e)
   }
+  console.log('fave', fave.length)
   const list =   
     fave.map((e) => {
      return(
@@ -90,14 +91,17 @@ const Favourite = React.memo((props) => {
     })
   return (
     <div>
-      <div className=" favourite">
-            <div > Favourites! </div>
-              <div className="scroll">
-                <PerfectScrollbar style={{ width: 200, height: 600 }}>
-                  {list}
-                </PerfectScrollbar>
-              </div>
-          </div>
+      {fave.length >= 1 ?(
+        <div className=" favourite">
+        <div > Favourites! </div>
+        <div className="scroll">
+          <PerfectScrollbar style={{ width: 200, height: 600 }}>
+            {list}
+          </PerfectScrollbar>
+        </div>
+      </div>
+      ): ""}
+      
     </div>
   );
 })

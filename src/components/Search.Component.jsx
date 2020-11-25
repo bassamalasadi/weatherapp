@@ -21,7 +21,6 @@ const Search = (props) => {
   const [flag, setFlag] = value3
   const [address, setAddress] = value4
   const [view] = value5
-  // const [date, setDate] = value6
   const [notification, setNotification] = useState('')
  
   const iconan = useSpring({opacity: 1, from: {opacity: 0}})
@@ -43,6 +42,7 @@ const Search = (props) => {
       await fetch(`${api.forecast}?q=${e}&appid=${api.keyWeather}`)
         .then((res) => res.json())
         .then((result) => {
+          // console.log(result)
           setForecast(result);
         });
       // fetch cities' data to display flag and countries' information
@@ -50,31 +50,6 @@ const Search = (props) => {
         .then(response => response.json())
         .then(async(result) => {
           setFlag(result);
-          //fetch capitals' time
-      // await fetch(`https://wft-geo-db.p.rapidapi.com/v1/locale/timezones/${result.region}__${result.capital.replace(/ /g,"_")}/dateTime`, {
-      //       "method": "GET",
-      //       "headers": {
-      //         "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
-      //         "x-rapidapi-key": "5427736e2bmsh4d65d165c1a1ff7p195e42jsn564120e2a11b"
-      //       }
-      //     })
-      //     .then(response => response.json())
-      //     .then((result) => {
-            
-      //       let data = result.data.slice(11,19)
-      //       setDate(data)
-      //     })
-      //     .catch(err => {
-      //       setNotification({
-      //         content: 'The current time of the capital " ',
-      //         name: result.capital,
-      //         content2:' " is not currently available',
-      //         type: 'Error'
-      //     })
-      //     setTimeout(() => {
-      //       setNotification(null)
-      //   }, 5000)
-      //     })
         });
         
       setAddress("");
@@ -107,8 +82,6 @@ const Search = (props) => {
   
 return( 
   <div className=""> 
-   
-
     <PlacesAutocomplete
                 value={address}
                 onChange={setAddress}
@@ -139,8 +112,8 @@ return(
                             <ul className="">
                               <li  className="suggeste">
                                 <div  className="suggesteCh">
-                                  <div className="searchIcon"></div>
-                                  <i className="material-icons">location_on</i>
+                                  {/* <div className="searchIcon"></div> */}
+                                  {/* <i className="material-icons">location_on</i> */}
                                   <div className="searchItem">
                                   <Link to={`/city/${suggestion.description.split(",")[0]}`}>
                                   <span className="searchRes">{suggestion.description}</span>

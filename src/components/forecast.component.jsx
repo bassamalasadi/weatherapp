@@ -1,8 +1,8 @@
 import React from "react";
 import Icon from "./Icons.Componet";
-
+import {useSpring, animated} from 'react-spring'
 const Forecast = React.memo((props) => {
-  
+  const iconan = useSpring({opacity: 1, from: {opacity: 0},transition: '1s'})
   let gsDayNames = [
     "Sunday",
     "Monday",
@@ -35,7 +35,9 @@ const Forecast = React.memo((props) => {
   }
   return (
   <div>
+    <animated.div style={iconan}>
     {items}
+    </animated.div>
   </div>);
 })
 
