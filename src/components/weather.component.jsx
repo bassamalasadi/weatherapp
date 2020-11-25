@@ -16,9 +16,9 @@ const Weather = (props) => {
           <div className="hourly" >
             <div className="hourly-t">
               {time.slice(0,10)} 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;
                   <div className="hourly-w">  {Math.round(forecast.list[i].main.temp - 273.15)}°C</div>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                &nbsp;
               {time.slice(11,16)}
             </div>
           </div>

@@ -86,24 +86,26 @@ main {
   transition: 1s ease-in-out;
   -webkit-transition: 1s ease-in-out;
   -moz-transition: 1s ease-in-out;
+  z-index: 999;
 }
 .home:hover {
   position: absolute;
-  left: 312px;
+  left: 330px;
   top: 0px;
   font-size: 3em;
-  font-weight: 900;
+  font-weight: bold;
   font-family: "Times New Roman", Times, serif;
-  width: 9%;
+  width: 16%;
   background-color: #f9d04e;
   color: #050505;
   border-radius: 0px 0px 30px 0px;
   padding-bottom: 5px;
-  padding-left: 10px;
+  padding-left: 30px;
   transition: 1s;
   transition: 1s;
   -webkit-transition: 1s;
   -moz-transition: 1s;
+  z-index: 999;
 }
 
 /* Search component */
@@ -354,8 +356,9 @@ ul {
   transform-style: preserve-3d !important;
 }
 .flag-box {
-  position: sticky;
+  position: relative;
   width: 30%;
+  top: 25px;
   border-radius: 16px;
   padding: 5px 25px;
   color: #ffffff;
@@ -365,7 +368,7 @@ ul {
 }
 .cap-box {
   position: relative;
-  width: 400px;
+  width: 350px;
   margin: 20px auto;
   border-radius: 16px;
   padding: 5px 25px;
@@ -422,18 +425,17 @@ ul {
 .d-time {
   position: relative;
   padding-top: 17px;
-  right: 10px;
 }
 .hourly {
   position: relative;
   display: inline-block;
   font-size: 15px;
   font-weight: 900;
-  top: 10px;
+  top: 20px;
   background-color: #f9d14e88;
   border-radius: 9px;
   color: #070707;
-  padding: 0px 10px;
+  padding: 0px 5px;
 }
 .hourly-w {
   position: relative;
@@ -442,7 +444,7 @@ ul {
   width: 80px;
   top: 5px;
   background-color: #245799bb;
-  border-radius: 0px;
+  border-radius: 0px 45px 0px 45px;
   color: #f0ad4e;
 }
 .hourly-t {
