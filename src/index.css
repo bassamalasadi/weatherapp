@@ -21,8 +21,8 @@ code {
   background-size: cover;
 }
 main {
-  min-height: 100vh;
-  min-width: 100vh;
+  min-height: 97vh;
+  min-width: 97vh;
 }
 .dateTime {
   position: relative;
@@ -48,11 +48,11 @@ main {
   font-size: 3em;
   font-weight: 900;
   font-family: Impact, Charcoal, sans-serif;
-  width: 14%;
+  width: 15%;
   background-color: #f9d04e;
   color: #050505;
   border-radius: 0px 0px 30px 30px;
-  padding-left: 25px;
+  padding-left: 30px;
   padding-top: 1px;
 }
 .wish {
@@ -90,7 +90,7 @@ main {
 }
 .home:hover {
   position: absolute;
-  left: 330px;
+  left: 320px;
   top: 0px;
   font-size: 3em;
   font-weight: bold;
