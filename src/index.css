@@ -17,10 +17,8 @@ code {
 }
 .App {
   background-image: url("https://images.unsplash.com/photo-1500740516770-92bd004b996e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2704&q=80");
-  /* background-image: url("C:/Users/bassa/weatherapp/weatherapp/src/assets/3.jpg"); */
-  background-color: #b3cdd1;
+  background-color: #80786b;
   background-size: cover;
-  background-color: #afcae9;
 }
 main {
   min-height: 100vh;
@@ -402,7 +400,9 @@ ul {
   top: 15px;
 }
 .d-time {
+  position: relative;
   padding-top: 17px;
+  right: 10px;
 }
 .hourly {
   position: relative;
@@ -434,7 +434,7 @@ ul {
 }
 .countray-flag {
   position: relative;
-
+  object-fit: cover;
   width: 100%;
   height: 30%;
   margin-top: 34px;
@@ -456,7 +456,7 @@ ul {
   position: relative;
   display: inline-block;
   top: 10px;
-  width: 150px;
+  width: 140px;
   left: 28%;
   margin: 20px;
   margin-left: 0;

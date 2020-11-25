@@ -47,7 +47,7 @@ const Weather = (props) => {
           </div>
         </div>
         <div className="hourly-scroll">
-        <PerfectScrollbar style={{ width: 270, height: 239 }}>
+        <PerfectScrollbar style={{ width: 290, height: 239 }}>
           {items}
           </PerfectScrollbar>
         </div>

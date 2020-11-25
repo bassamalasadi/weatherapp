@@ -95,7 +95,7 @@ const Favourite = React.memo((props) => {
         <div className=" favourite">
         <div > Favourites! </div>
         <div className="scroll">
-          <PerfectScrollbar style={{ width: 200, height: 600 }}>
+          <PerfectScrollbar style={{ width: 200, height: 570 }}>
             {list}
           </PerfectScrollbar>
         </div>
