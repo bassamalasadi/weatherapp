@@ -13,9 +13,15 @@ const Weather = (props) => {
       let time = forecast.list[i].dt_txt
       items.push(
         <div className="d-time" key={forecast.list[i].dt}>
-          <div className="hourly" >{time.slice(0,10)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {time.slice(11,16)}&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            {/* <div className="hourly" >{time.slice(11,16)}</div> */}
-           <div className="hourly-w">  {Math.round(forecast.list[i].main.temp - 273.15)}°C</div>
+          <div className="hourly" >
+            <div className="hourly-t">
+              {time.slice(0,10)} 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div className="hourly-w">  {Math.round(forecast.list[i].main.temp - 273.15)}°C</div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              {time.slice(11,16)}
+            </div>
+          </div>
       </div>
       )
     }
@@ -47,7 +53,7 @@ const Weather = (props) => {
           </div>
         </div>
         <div className="hourly-scroll">
-        <PerfectScrollbar style={{ width: 290, height: 239 }}>
+        <PerfectScrollbar style={{ width: 270, height: 239 }}>
           {items}
           </PerfectScrollbar>
         </div>

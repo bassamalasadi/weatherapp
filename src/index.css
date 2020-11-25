@@ -52,8 +52,8 @@ main {
   background-color: #f9d04e;
   color: #050505;
   border-radius: 0px 0px 30px 30px;
-  padding-left: 20px;
-  padding-top: 10px;
+  padding-left: 25px;
+  padding-top: 1px;
 }
 .wish {
   position: absolute;
@@ -66,23 +66,44 @@ main {
   background-color: #f9d04e;
   color: #050505;
   border-radius: 0px 0px 0px 30px;
-  padding-top: 10px;
+  padding-top: 2px;
   padding-left: 20px;
   padding-bottom: 10px;
 }
 .home {
   position: absolute;
-  left: 321px;
+  left: 312px;
   top: 0px;
   font-size: 2em;
   font-weight: 700;
   font-family: "Times New Roman", Times, serif;
-  width: 8%;
+  width: 7%;
   background-color: #f9d04e;
   color: #050505;
   border-radius: 0px 0px 30px 0px;
   padding-bottom: 5px;
-  padding-left: 20px;
+  padding-left: 10px;
+  transition: 1s ease-in-out;
+  -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+}
+.home:hover {
+  position: absolute;
+  left: 312px;
+  top: 0px;
+  font-size: 3em;
+  font-weight: 900;
+  font-family: "Times New Roman", Times, serif;
+  width: 9%;
+  background-color: #f9d04e;
+  color: #050505;
+  border-radius: 0px 0px 30px 0px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  transition: 1s;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
 }
 
 /* Search component */
@@ -397,7 +418,6 @@ ul {
   position: relative;
   float: right;
   right: 70px;
-  top: 15px;
 }
 .d-time {
   position: relative;
@@ -410,9 +430,9 @@ ul {
   font-size: 15px;
   font-weight: 900;
   top: 10px;
-  background-color: #f0ac4e81;
-  border-radius: 9px 0px 0px 9px;
-  color: #ffffff;
+  background-color: #f9d14e88;
+  border-radius: 9px;
+  color: #070707;
   padding: 0px 10px;
 }
 .hourly-w {
@@ -420,11 +440,14 @@ ul {
   display: inline-block;
   font-size: 25px;
   width: 80px;
-  top: 12px;
-  background-color: #24579983;
-  border-radius: 9px;
+  top: 5px;
+  background-color: #245799bb;
+  border-radius: 0px;
   color: #f0ad4e;
-  padding: 0px 10px;
+}
+.hourly-t {
+  position: relative;
+  top: -5px;
 }
 .weather-extra2 {
   position: relative;
