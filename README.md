@@ -1,6 +1,7 @@
 This is was made as assignment for YTSP0300 - Application Frameworks course by Bassam Al-Asadi.
 
 
+### `npm start
 
 In the project directory, you can run:
 
