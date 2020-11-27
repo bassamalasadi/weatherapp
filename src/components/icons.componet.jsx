@@ -1,3 +1,4 @@
+// Set the weather Icon by comparing the Icon ID parameters provides from weather API
 import React from "react";
 
 const Icon = (props) => {

@@ -2,13 +2,19 @@ import React from "react";
 import Icon from "./Icons.Componet";
 import {useSpring, animated} from 'react-spring'
 import PerfectScrollbar from "react-perfect-scrollbar";
+
 const Weather = (props) => {
+  
   const iconan = useSpring({opacity: 1, from: {opacity: 0},transition: '1s'})
+  // Pass different parameters from citypage
   let weather = props.weather
   let flag = props.flag
   let forecast = props.forecast
   let items = []
+
+
   if(typeof forecast.list != "undefined"){
+    // Loop through the forecasting props to extract 40 weather prediction with the date and time 
     for(let i = 0; i < 40 ; i++){
       let time = forecast.list[i].dt_txt
       items.push(
@@ -26,8 +32,10 @@ const Weather = (props) => {
       )
     }
   }
+
   return (
     <animated.div style={iconan}>
+      {/* Display the flag, temp degree in celsius, and the weather Icon */}
     <div className="leftSideContainer">
       <img src={flag.flag} alt="flag" className="countray-flag" /> <br />        
       <div className="degree">
@@ -35,6 +43,7 @@ const Weather = (props) => {
           {Math.round(weather.main.temp - 273.15)}°C 
         </div>
     </div> 
+    {/* Display the city and country name, various information about the weather, and finally the 5 days prediction by 8-times per day. */}
     <div className="info-box" >
       <div className="weather-container">     
         <div className="flag-box">

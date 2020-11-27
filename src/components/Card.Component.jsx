@@ -1,7 +1,11 @@
+// Display the entrance card in the home page 
+
 import React from 'react'
+// Use FontAwesomeIcon to display github and pdf icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faFile } from '@fortawesome/free-solid-svg-icons'
+
 const Card = () => {
     return(
         <div className="page-wrap">
