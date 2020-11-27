@@ -14,34 +14,34 @@ To get started developing right away:
 
 ```
 ├── public
-│ ├── icon.png
-│ ├── index.html
-│ ├── manifest.json
-│ └── robots.txt
+│    ├── icon.png
+│    ├── index.html
+│    ├── manifest.json
+│    └── robots.txt
 ├── src
-│ ├── Context
-│ │ ├── FavouritesContext.jsx
-│ │ └── SearchContext.jsx
-│ ├── components
-│ │ ├── AddAndCopy.Component.jsx
-│ │ ├── Card.Component.jsx
-│ │ ├── Search.Component.jsx
-│ │ ├── favourites.component.jsx
-│ │ ├── forecast.component.jsx
-│ │ ├── icons.componet.jsx
-│ │ ├── timeDate.jsx
-│ │ └── weather.component.jsx
-│ ├── notification
-│ │ └── Notification.jsx
-│ ├── pages
-│ │ ├── CityPage.jsx
-│ │ └── HomePage.jsx
-│ ├── App.css
-│ ├── App.js
-│ ├── App.test.js
-│ ├── index.css
-│ ├── index.js
-│ └── setupTests.js
+│    ├── Context
+│    │    ├── FavouritesContext.jsx
+│    │     └── SearchContext.jsx
+│    ├── components
+│    │     ├── AddAndCopy.Component.jsx
+│    │     ├── Card.Component.jsx
+│    │     ├── Search.Component.jsx
+│    │     ├── favourites.component.jsx
+│    │     ├── forecast.component.jsx
+│    │     ├── icons.componet.jsx
+│    │     ├── timeDate.jsx
+│    │     └── weather.component.jsx
+│    ├── notification
+│    │     └── Notification.jsx
+│    ├── pages
+│    │     ├── CityPage.jsx
+│    │     └── HomePage.jsx
+│    ├── App.css
+│    ├── App.js
+│    ├── App.test.js
+│    ├── index.css
+│    ├── index.js
+│    └── setupTests.js
 ├── .gitignore
 ├── Bassam_Alasadi_stack_research_YTSP0300.pdf
 ├── README.md
