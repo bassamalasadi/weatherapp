@@ -4,6 +4,7 @@ This is was made as assignment for YTSP0300 - Application Frameworks course by :
 ### `Bassam Al-Asadi`
 
 ## What You're Getting
+```
 ├── public
   ├── icon.png
   ├── index.html
@@ -32,5 +33,5 @@ This is was made as assignment for YTSP0300 - Application Frameworks course by :
 ├── index.css
 ├── index.js
 ├── setupTests.js
-
+```
 Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
