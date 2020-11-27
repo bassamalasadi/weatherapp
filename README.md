@@ -1,11 +1,5 @@
-This is was made as assignment for YTSP0300 - Application Frameworks course by Bassam Al-Asadi.
-
-
-### `npm start`
-
-In the project directory, you can run:
-
-### `npm start`
+This is was made as assignment for YTSP0300 - Application Frameworks course by:
+### `Bassam Al-Asadi`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
