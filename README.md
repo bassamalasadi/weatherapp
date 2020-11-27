@@ -1,6 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is was made as assignment for YTSP0300 - Application Frameworks course by ## Bassam AlAsadi.
 
-## Available Scripts
+
 
 In the project directory, you can run:
 
