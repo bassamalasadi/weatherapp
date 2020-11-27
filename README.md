@@ -21,7 +21,7 @@ To get started developing right away:
 ├── src
 │    ├── Context
 │    │    ├── FavouritesContext.jsx
-│    │     └── SearchContext.jsx
+│    │    └── SearchContext.jsx
 │    ├── components
 │    │     ├── AddAndCopy.Component.jsx
 │    │     ├── Card.Component.jsx
