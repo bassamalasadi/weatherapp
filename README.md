@@ -4,6 +4,12 @@ This is was made as assignment for YTSP0300 - Application Frameworks course by :
 ### `Bassam Al-Asadi`
 
 ## What You're Getting
+
+To get started developing right away:
+
+* install all project dependencies with `npm install`
+* start the development server with `npm start`
+
 ```
 ├── public
   ├── icon.png
