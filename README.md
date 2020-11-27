@@ -3,6 +3,8 @@
 This is was made as assignment for YTSP0300 - Application Frameworks course by :
 ### `Bassam Al-Asadi`
 
+## Front-end Stack
+
 ## What You're Getting
 
 To get started developing right away:
