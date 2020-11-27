@@ -1,14 +1,16 @@
 # `WeatherApp Project`
 
-This is was made as assignment for YTSP0300 - Application Frameworks course by :
-### `Bassam Al-Asadi`
+This is was made as assignment for YTSP0300 - Application Frameworks course by : `Bassam Al-Asadi`
 
-## What You're Getting
+# [Live Demo](https://bassamalasadi.github.io/weatherapp/#/)
+
+## Setup
 
 To get started developing right away:
-
-* install all project dependencies with `npm install`
-* start the development server with `npm start`
+* `Fork` and `clone` this repository.
+* `cd` into the project directory.
+* install all project dependencies with `npm install`.
+* start the development server with `npm start`.
 
 ```
 ├── public
