@@ -9,18 +9,19 @@ import { faFile } from '@fortawesome/free-solid-svg-icons'
 const Card = () => {
     return(
         <div className="page-wrap">
-              <div id="card1" className="card">
+              <div className="card">
                 <a href="https://www.jamk.fi/fi/Etusivu/" target="_blank">
                     <div className="center">
-                        <img id="headshot" src="https://i.ibb.co/8NQVBt3/cXoB6y6n.png" />
+                        <img className="headshot" src="https://i.ibb.co/8NQVBt3/cXoB6y6n.png" alt="jamk img" />
                     </div>
                 </a>
                 <div className="content">
                   <h1>WeatherApp</h1>
                   <p className="clickable">
-                  This is was made as assignment for YTSP0300 - Application Frameworks course by Bassam AlAsadi.
+                  The Weather app was made Using <a className="react"href="https://reactjs.org/" target="_blank"> Reactjs</a> " A JavaScript library for building user interfaces " as assignment for YTSP0300  - Application Frameworks course 2020 by : <h5 style={{color:"#994400"}}> <strong> BASSAM ALASADI </strong></h5>
                   </p> 
-                  <h3>Documentations</h3>
+                  <h3><strong>Documentations</strong></h3>
+                  <br />
                   <div className="icon-block center clickable">
                   Source Code &nbsp;&nbsp;
                     <a href="//github.com/bassamalasadi/weatherapp/tree/master" target="_blank">

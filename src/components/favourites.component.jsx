@@ -1,7 +1,8 @@
 // Display the Favourites list for all the cities 
 
 import React, {useContext } from "react";
-import { BsFillStarFill } from "react-icons/bs";
+import { AiFillDelete } from "react-icons/ai";
+
 import Icon from "./Icons.Componet";
 import Popup from "reactjs-popup";
 import Delay from 'react-delay'
@@ -36,24 +37,14 @@ const Favourite = React.memo((props) => {
   // Define a variable to set all the items inside it for the rendering process
   const list = 
     // Looping through the items  
-    fave.map((e) => {
+    fave.map((e) => { 
      return(
         <div key={e.id}>
           <Delay wait={100} >
           <Popup 
             trigger={
-              <div className="scrollbar element">
-                <div>
-                  {e.name} {Math.round(e.temp - 273.15)}°C <Icon icon={e.icon} />{" "}
-                  <button
-                    type="button"
-                    className="btn btn-warning star"
-                    value={e.name}
-                    onClick={() => del(fave.indexOf(e))}
-                  >
-                    <BsFillStarFill /> Remove
-                  </button>  
-                </div>
+              <div className="scrollbar">
+                  &nbsp;&nbsp;{e.name} &nbsp;&nbsp;&nbsp; <span className="fave-w">{Math.round(e.temp - 273.15)}°C </span>{/*<Icon icon={e.icon} />*/}{" "} 
               </div>
             }
             position="left center"
@@ -62,6 +53,11 @@ const Favourite = React.memo((props) => {
             <Link to={`/city/${e.name}`}>
             <button className="btn btn-success" onClick={()=> setView(e.name)}> View</button>
             </Link>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button className="btn btn-danger" value={e.name} onClick={() => del(fave.indexOf(e))} >
+                    Remove
+                  </button>
+            
             </div></nobr></Card.Header>
             {typeof e.description != "undefined" ? (
               <Card.Body>
@@ -72,14 +68,14 @@ const Favourite = React.memo((props) => {
                 style={{ backgroundImage: `url(${props.flag})` }}
               >
                 <div>
-                <Card.Title> Description </Card.Title>
+                <Card.Title> <strong>Description</strong> </Card.Title>
                 </div>
                 <Card.Text>
                 {e.main}
                 
                 <br />
                 <br />
-                Coordinates
+                <strong>Coordinates</strong><br />
                 Latitude: {e.lat}<br />
                 Longitude: {e.lon}<br />
                 </Card.Text>
@@ -100,7 +96,7 @@ const Favourite = React.memo((props) => {
         <div className=" favourite">
         <div > Favourites! </div>
         <div className="scroll">
-          <PerfectScrollbar style={{ width: 200, height: 570 }}>
+          <PerfectScrollbar style={{ width: 210, height: 565 }}>
             {list}
           </PerfectScrollbar>
         </div>

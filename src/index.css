@@ -17,7 +17,11 @@ code {
 }
 .App {
   /* background-image: url("https://images.unsplash.com/photo-1500740516770-92bd004b996e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2704&q=80"); */
-  background-image: linear-gradient(115deg, #1f2024 44%, #a7c9f7 70%);
+  background-image: linear-gradient(
+    115deg,
+    rgba(3, 3, 3, 0.747) 44%,
+    #a7c9f7 70%
+  );
   background-size: cover;
 }
 main {
@@ -268,20 +272,31 @@ ul {
 }
 
 .scrollbar {
-  background-color: rgba(73, 101, 151, 0.7);
   height: auto;
+  text-align: left;
+
   color: white;
-  font-size: 1vw;
-  font-weight: 200;
-  margin-top: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 10px 0px;
   margin-bottom: 10px;
-  background-color: rgba(59, 59, 14, 0.24);
-  border-radius: 10px;
-  box-shadow: 0px 5px rgba(14, 44, 100, 0.4);
+  background-color: rgba(3, 3, 3, 0.747);
+  border-radius: 20px 20px 53px 53px;
+  box-shadow: 0px 2px 5px 1px #090a0aa9;
+  -webkit-box-shadow: 0px 2px 5px 1px #050505bb;
   font-size: 20px;
   transition: 0.4s ease;
 }
-
+.fave-w {
+  position: relative;
+  display: flex;
+  top: 10px;
+  font-size: 35px;
+  border-radius: 0px 0px 75px 75px;
+  background-color: rgba(255, 99, 71, 0.774);
+  justify-content: center;
+  align-items: center;
+}
 .scroll {
   margin-top: 15px;
 }
@@ -289,6 +304,9 @@ ul {
   margin-bottom: -10px;
   margin-top: -25px;
   width: 99%;
+}
+.ele {
+  pointer-events: none;
 }
 
 /* Weather compontents */
@@ -303,8 +321,7 @@ ul {
   border-radius: 16px;
   padding: 5px 15px;
   color: #fdfdfd;
-  background-image: linear-gradient(315deg, #1f2024 34%, #a7c9f7 80%);
-
+  background-image: linear-gradient(110deg, #839ec4 30%, #1f2024b6 80%);
   text-shadow: 1px 1px rgba(12, 12, 17, 0.5);
   text-align: center;
   -webkit-box-shadow: 3px 6px 16px 10px rgba(0, 0, 0, 0.75);
@@ -335,8 +352,8 @@ ul {
   transform: translateZ(500px) perspective(500px) scale(1.04);
   -webkit-transform: translateZ(500px) perspective(800px) scale(1.04);
   -o-transform: translateZ(500px) perspective(800px) scale(1.04);
-  box-shadow: 0 0 8px -1px #262626;
-  -webkit-box-shadow: 0 0 8px -1px #262626;
+  box-shadow: 0px 3px 18px 1px #c7defd;
+  -webkit-box-shadow: 0px 3px 18px 1px #a7c9f7;
   border: none;
   float: left;
   transition: all cubic-bezier(0.34, 0.85, 0.35, 0.86) 0.45s;
@@ -344,19 +361,35 @@ ul {
 }
 
 .leftSideContainer:hover {
-  transform: translateZ(500px) scale(1.08) perspective(20000px) rotateY(10deg) !important;
+  transform: translateZ(500px) scale(1.09) perspective(20000px) rotateY(10deg) !important;
 
-  -webkit-transform: translateZ(500px) scale(1.08) perspective(20000px)
+  -webkit-transform: translateZ(500px) scale(1.09) perspective(2000px)
     rotateY(10deg) !important;
-  box-shadow: 0 0 30px -1px #262626 !important;
-  -webkit-box-shadow: 0 0 30px -1px #262626 !important;
+  box-shadow: 0px 3px 110px -1px #a7c9f7 !important;
+  -webkit-box-shadow: 0px 3px 110px -1px #a7c9f7 !important;
 
   transform-style: preserve-3d !important;
+}
+.weather-flag-icon {
+  position: relative;
+  width: auto;
+  right: 30%;
+  padding: 0px 104px;
+
+  background-color: #a7c8f79f;
+}
+.main-temp {
+  position: relative;
+  font-size: 2em;
+  color: #f9d04e;
+  right: 30%;
+  text-shadow: 4px 4px 4px #070707;
+  text-align: center;
 }
 .flag-box {
   position: relative;
   width: 30%;
-  top: 25px;
+  top: 5px;
   border-radius: 16px;
   padding: 5px 25px;
   color: #ffffff;
@@ -384,7 +417,7 @@ ul {
   left: -50px;
   background-color: #1637635b;
   border-radius: 5px;
-  color: #f0ad4e;
+  color: #ffffff;
   font-family: Segoe UI;
   padding: 5px 15px;
   margin: 5px auto;
@@ -399,17 +432,16 @@ ul {
 
 .weather-city-name {
   float: left;
-  color: #11193b65;
+  color: #ffffff;
   width: 400px;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 900;
   transform-style: preserve-3d;
-  text-shadow: 1px 1px rgba(3, 3, 3, 0.5);
 }
 .weather-country-name {
   float: left;
-  color: #11193b65;
-  font-size: 20px;
+  color: #ffffff;
+  font-size: 25px;
   font-weight: 900;
   transform-style: preserve-3d;
   text-shadow: 1px 1px rgba(3, 3, 3, 0.5);
@@ -422,18 +454,22 @@ ul {
 }
 .d-time {
   position: relative;
-  padding-top: 17px;
+  padding-top: 15px;
 }
 .hourly {
   position: relative;
   display: inline-block;
   font-size: 15px;
   font-weight: 900;
+  height: 37.7px;
   top: 20px;
   background-color: #f9d14e88;
   border-radius: 9px;
   color: #070707;
   padding: 0px 5px;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
 }
 .hourly-w {
   position: relative;
@@ -442,13 +478,25 @@ ul {
   width: 80px;
   top: 5px;
   background-color: #245799bb;
-  border-radius: 0px 45px 0px 45px;
+  border-radius: 0px 45px;
   color: #f0ad4e;
+  transition: all 5s ease-in-out;
+  -webkit-transition: all 5s ease-in-out;
+  -moz-transition: all 5s ease-in-out;
+}
+.hourly-w:hover {
+  background-color: #006effbb;
+  border-radius: 45px 0px;
+  color: #fff3e2;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
 }
 .hourly-t {
   position: relative;
   top: -5px;
 }
+
 .weather-extra2 {
   position: relative;
   left: 20%;
@@ -489,7 +537,7 @@ ul {
   color: #fdfdfd;
   font-size: 1vw;
   font-weight: 700;
-  background-image: linear-gradient(270deg, #a7c9f7 0%, #1f2024 74%);
+  background-image: linear-gradient(180deg, #839ec4 30%, #1f2024b6 80%);
   text-shadow: 1px 1px rgba(11, 11, 126, 0.5);
   text-align: center;
   -webkit-box-shadow: 2px 2px 10px 7px rgba(0, 0, 0, 0.75);
@@ -543,7 +591,6 @@ ul {
 }
 
 .card {
-  /* background-color: #5b8fde; */
   border-radius: 36px;
   padding-top: 20px;
   margin: 20px;
@@ -557,6 +604,14 @@ ul {
   border: none;
 }
 
+.react {
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(1, 62, 131);
+}
+.react:hover {
+  text-decoration: none;
+}
 /*  */
 
 .page-wrap {
@@ -590,9 +645,12 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 5s ease-in-out;
 }
+
 .clickable {
   transform: translateZ(0);
+  font-family: "Lucida Console", Courier, monospace;
 }
 .content {
   width: 80vw;
@@ -603,7 +661,7 @@ a:hover {
   box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.4);
   border-radius: 0px 0px 25px 25px;
 }
-#headshot {
+.headshot {
   width: 210px;
   padding: 0.5em;
   margin-bottom: -3em;

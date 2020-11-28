@@ -40,14 +40,14 @@ const Weather = (props) => {
       <img src={flag.flag} alt="flag" className="countray-flag" /> <br />        
       <div className="degree">
         <div className="weather-flag-icon">{typeof props != "undefined" ? <Icon icon={weather.weather[0].id}  /> : ""}  </div>
-          {Math.round(weather.main.temp - 273.15)}°C 
+          <div className="main-temp">{Math.round(weather.main.temp - 273.15)}°C </div>
         </div>
     </div> 
     {/* Display the city and country name, various information about the weather, and finally the 5 days prediction by 8-times per day. */}
     <div className="info-box" >
       <div className="weather-container">     
         <div className="flag-box">
-          <div className="weather-city-name">{weather.name}, {weather.sys.country}</div> 
+          <div className="weather-city-name">{weather.name} <br /> {weather.sys.country}</div> 
             <br />
           <div className="weather-country-name">{flag.nativeName} - {flag.name}</div>
         </div>
