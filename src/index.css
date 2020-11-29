@@ -274,7 +274,6 @@ ul {
 .scrollbar {
   height: auto;
   text-align: left;
-
   color: white;
   cursor: pointer;
   margin-top: 10px;
@@ -282,8 +281,8 @@ ul {
   margin-bottom: 10px;
   background-color: rgba(3, 3, 3, 0.747);
   border-radius: 20px 20px 53px 53px;
-  box-shadow: 0px 2px 5px 1px #090a0aa9;
-  -webkit-box-shadow: 0px 2px 5px 1px #050505bb;
+  box-shadow: 0px 2px 5px 1px #9a9b9ba9;
+  -webkit-box-shadow: 0px 2px 5px 1px #918f8fbb;
   font-size: 20px;
   transition: 0.4s ease;
 }
@@ -465,7 +464,7 @@ ul {
   top: 20px;
   background-color: #f9d14e88;
   border-radius: 9px;
-  color: #070707;
+  color: #2f2f33;
   padding: 0px 5px;
   transition: 0.5s ease-in-out;
   -webkit-transition: 0.5s ease-in-out;
@@ -479,7 +478,7 @@ ul {
   top: 5px;
   background-color: #245799bb;
   border-radius: 0px 45px;
-  color: #f0ad4e;
+  color: #f5e690;
   transition: all 5s ease-in-out;
   -webkit-transition: all 5s ease-in-out;
   -moz-transition: all 5s ease-in-out;
@@ -537,7 +536,7 @@ ul {
   color: #fdfdfd;
   font-size: 1vw;
   font-weight: 700;
-  background-image: linear-gradient(180deg, #839ec4 30%, #1f2024b6 80%);
+  background-image: linear-gradient(180deg, #839ec4 30%, #50525ab6 80%);
   text-shadow: 1px 1px rgba(11, 11, 126, 0.5);
   text-align: center;
   -webkit-box-shadow: 2px 2px 10px 7px rgba(0, 0, 0, 0.75);
